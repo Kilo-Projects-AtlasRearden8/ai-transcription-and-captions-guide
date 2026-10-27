@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1. How AI Transcription Works — Free AI Transcription Guide</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="#content" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="site-brand">
+        <div class="logo">AD</div>
+        <div>
+          <h1>Free AI Transcription &amp; Captions</h1>
+          <div class="llc">Asdale Dynamics, LLC</div>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#chapters">All Chapters</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="chapter-page" id="content">
+    <div class="chapter-header">
+      <span class="chapter-number">Chapter 1</span>
+      <h1>How AI Transcription Works</h1>
+      <div class="series">Free AI Transcription and Captions Guide &middot; Asdale Dynamics, LLC</div>
+    </div>
+
+    <section class="section">
+      <h2>The Big Idea</h2>
+      <p>You speak. AI writes it down. That's it.</p>
+      <p>But under the hood, something clever happens. Understanding the basics helps you pick the right tool and get better results.</p>
+    </section>
+
+    <section class="section">
+      <h2>The Three-Step Pipeline</h2>
+      <p>Every AI transcription system — whether cloud or local — does three things:</p>
+      <pre><code>Audio File → [1] Feature Extraction → [2] Acoustic Model → [3] Language Model → Text</code></pre>
+      <h3>Step 1: Feature Extraction</h3>
+      <p>The AI chops your audio into tiny slices (usually 20–30 milliseconds each). For each slice, it measures frequencies — basically, a fingerprint of the sound at that moment.</p>
+      <p><em>Think of it like:</em> Taking a photo of a sound wave every 0.02 seconds.</p>
+      <h3>Step 2: Acoustic Model</h3>
+      <p>This model has "listened" to thousands of hours of speech. It matches each sound-slice to phonemes — the building blocks of words (like "k", "ae", "t" for "cat").</p>
+      <p><em>Think of it like:</em> A listener who knows every accent and mumble pattern.</p>
+      <h3>Step 3: Language Model</h3>
+      <p>Phonemes alone give you "k ae t". The language model knows English (or other languages) — grammar, common phrases, context. It turns "k ae t" into "cat" not "kat" or "cut."</p>
+      <p><em>Think of it like:</em> Autocomplete on steroids. It predicts the most likely word sequence.</p>
+    </section>
+
+    <section class="section">
+      <h2>Why This Matters for You</h2>
+      <table>
+        <thead><tr><th>If your audio has...</th><th>The pipeline struggles with...</th><th>Fix it by...</th></tr></thead>
+        <tbody>
+          <tr><td>Background noise</td><td>Step 1 (feature extraction)</td><td>Record in a quiet room, use a directional mic</td></tr>
+          <tr><td>Accents / fast speech</td><td>Step 2 (acoustic model)</td><td>Choose a model trained on diverse speech (Whisper, Vosk)</td></tr>
+          <tr><td>Technical jargon / names</td><td>Step 3 (language model)</td><td>Add custom vocabulary, or edit afterward</td></tr>
+          <tr><td>Multiple speakers</td><td>All steps</td><td>Use speaker diarization tools (Chapter 10)</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>The Secret: It's All Probabilities</h2>
+      <p>AI doesn't "know" what you said. It calculates: <em>"Given these sound frequencies, what word sequence is most probable?"</em></p>
+      <p>That's why:</p>
+      <ul>
+        <li>Clear audio = high confidence = accurate transcript</li>
+        <li>Noisy audio = low confidence = hallucinations (wrong words)</li>
+        <li>Silence or music = garbage output (the model tries to "hear" words)</li>
+      </ul>
+      <p><strong>Pro tip:</strong> Most tools show confidence scores. Low confidence = check that part manually.</p>
+    </section>
+
+    <section class="section">
+      <h2>Meet the Main Models You'll Encounter</h2>
+      <table>
+        <thead><tr><th>Model</th><th>Type</th><th>Strengths</th><th>Best For</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Whisper</strong> (OpenAI)</td><td>Cloud &amp; Local</td><td>Multilingual, robust to noise, free weights</td><td>Almost everything</td></tr>
+          <tr><td><strong>Vosk</strong></td><td>Local only</td><td>Fast, tiny models, offline</td><td>Low-end computers, mobile</td></tr>
+          <tr><td><strong>Faster-Whisper</strong></td><td>Local only</td><td>4–8x faster than original Whisper</td><td>Local transcription on CPU</td></tr>
+          <tr><td><strong>AssemblyAI</strong></td><td>Cloud only</td><td>Speaker labels, summarization, free tier</td><td>Meetings, podcasts</td></tr>
+          <tr><td><strong>Deepgram</strong></td><td>Cloud only</td><td>Real-time streaming, cheap</td><td>Live captions, apps</td></tr>
+          <tr><td><strong>Google Speech-to-Text</strong></td><td>Cloud only</td><td>Huge language support</td><td>Non-English, enterprise</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section callout">
+      <h2>Try It: See the Pipeline in Action</h2>
+      <p><strong>Online demo (no install):</strong></p>
+      <ol>
+        <li>Go to <a href="https://huggingface.co/spaces/openai/whisper" target="_blank" rel="noopener">huggingface.co/spaces/openai/whisper</a></li>
+        <li>Click the microphone or upload a short audio file</li>
+        <li>Watch the text appear — that's the pipeline running in real time</li>
+      </ol>
+      <p><strong>What to notice:</strong></p>
+      <ul>
+        <li>Pauses become punctuation</li>
+        <li>"Um" and "uh" are usually filtered out</li>
+        <li>Proper nouns (names, places) may be misspelled</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Key Takeaways</h2>
+      <ul>
+        <li><strong>Transcription = 3 steps:</strong> Features → Phonemes → Words</li>
+        <li><strong>Quality in = quality out:</strong> Clean audio is the #1 factor</li>
+        <li><strong>Models differ:</strong> Some favor speed, some accuracy, some languages</li>
+        <li><strong>Confidence scores exist:</strong> Use them to know what to double-check</li>
+        <li><strong>You don't need to understand the math</strong> — just know what affects results</li>
+      </ul>
+    </section>
+
+    <div class="chapter-nav">
+      <div class="nav-next">
+        <a href="chapter2.html">Chapter 2 → Key Terms You'll See</a>
+      </div>
+    </div>
+    <a href="index.html" class="back-to-index">← Back to all chapters</a>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-credit">Asdale Dynamics, LLC &middot; Indiana, formed October 2026</div>
+      <hr class="footer-divider">
+      <p>MIT License &middot; Copyright (c) 2026 Asdale Dynamics, LLC</p>
+    </div>
+  </footer>
+</body>
+</html>

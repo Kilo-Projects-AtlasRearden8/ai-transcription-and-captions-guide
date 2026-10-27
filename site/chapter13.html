@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>13. Quick Reference Card — Free AI Transcription Guide</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="#content" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="site-brand">
+        <div class="logo">AD</div>
+        <div>
+          <h1>Free AI Transcription &amp; Captions</h1>
+          <div class="llc">Asdale Dynamics, LLC</div>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#chapters">All Chapters</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="chapter-page" id="content">
+    <div class="chapter-header">
+      <span class="chapter-number">Chapter 13</span>
+      <h1>Quick Reference Card</h1>
+      <div class="series">Free AI Transcription and Captions Guide &middot; Asdale Dynamics, LLC</div>
+    </div>
+
+    <section class="section">
+      <h2>Install Local Tools (One Time)</h2>
+      <pre><code>pip install faster-whisper
+# ffmpeg (for audio conversion)
+# Mac: brew install ffmpeg
+# Windows: ffmpeg.org
+# Linux: sudo apt install ffmpeg</code></pre>
+    </section>
+
+    <section class="section">
+      <h2>Transcribe a File (Local)</h2>
+      <pre><code># Basic
+python -m faster_whisper transcribe file.mp3 --model base
+
+# With SRT + TXT output
+python -m faster_whisper transcribe file.mp3 --model base --output_format srt,txt --output_dir ./out
+
+# Non-English
+python -m faster_whisper transcribe file.mp3 --model base --language es
+
+# Faster (less accurate)
+python -m faster_whisper transcribe file.mp3 --model tiny</code></pre>
+      <p><strong>Models:</strong> tiny &lt; base &lt; small &lt; medium &lt; large-v3</p>
+    </section>
+
+    <section class="section">
+      <h2>Cloud Tools (No Install)</h2>
+      <table>
+        <thead><tr><th>Task</th><th>Tool</th><th>Link</th></tr></thead>
+        <tbody>
+          <tr><td>Video captions</td><td>YouTube Studio</td><td>studio.youtube.com</td></tr>
+          <tr><td>Real-time dictation</td><td>Google Docs Voice Typing</td><td>docs.google.com</td></tr>
+          <tr><td>Speaker labels</td><td>Otter.ai</td><td>otter.ai</td></tr>
+          <tr><td>Speaker labels + API</td><td>AssemblyAI</td><td>assemblyai.com</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section callout">
+      <h2>Privacy Rules</h2>
+      <table>
+        <thead><tr><th>Content Type</th><th>Use Local?</th><th>Use Cloud?</th></tr></thead>
+        <tbody>
+          <tr><td>Patient health info</td><td>✅ Required</td><td>❌ Never</td></tr>
+          <tr><td>Confidential business</td><td>✅ Required</td><td>❌ Never</td></tr>
+          <tr><td>Personal/financial</td><td>✅ Required</td><td>❌ Never</td></tr>
+          <tr><td>Public lecture</td><td>Optional</td><td>Optional</td></tr>
+          <tr><td>Your own dictation</td><td>Optional</td><td>Optional</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>File Formats at a Glance</h2>
+      <table>
+        <thead><tr><th>Format</th><th>Use For</th><th>Extension</th></tr></thead>
+        <tbody>
+          <tr><td>Plain text</td><td>Reading, notes</td><td>.txt</td></tr>
+          <tr><td>Markdown</td><td>Docs, GitHub</td><td>.md</td></tr>
+          <tr><td>Video captions</td><td>YouTube, VLC</td><td>.srt</td></tr>
+          <tr><td>Web captions</td><td>HTML5 video</td><td>.vtt</td></tr>
+          <tr><td>Structured data</td><td>Code, analysis</td><td>.json</td></tr>
+          <tr><td>Word document</td><td>Sharing, printing</td><td>.docx</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>Common Problems &amp; Fixes</h2>
+      <table>
+        <thead><tr><th>Problem</th><th>Fix</th></tr></thead>
+        <tbody>
+          <tr><td>pip: command not found</td><td>Install Python from python.org</td></tr>
+          <tr><td>Model download fails</td><td>Check internet, try again</td></tr>
+          <tr><td>Out of memory</td><td>Use --model tiny, close apps</td></tr>
+          <tr><td>Transcription too slow</td><td>Use --model tiny or base</td></tr>
+          <tr><td>Wrong words in transcript</td><td>Edit manually (Chapter 9)</td></tr>
+          <tr><td>No speaker labels</td><td>Add manually or use cloud tool</td></tr>
+          <tr><td>Audio format error</td><td>Convert with ffmpeg to WAV</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>5-Minute Workflow</h2>
+      <ol>
+        <li>Record audio</li>
+        <li>Transfer to computer</li>
+        <li><code>pip install faster-whisper</code> (first time only)</li>
+        <li><code>python -m faster_whisper transcribe file.mp3 --model base --output_format srt,txt</code></li>
+        <li>Open the <code>.txt</code> file, edit errors</li>
+        <li>Done — you have a transcript</li>
+      </ol>
+    </section>
+
+    <section class="section callout">
+      <h2>Remember</h2>
+      <ul>
+        <li><strong>Local = private</strong> (audio never leaves your computer)</li>
+        <li><strong>Cloud = convenient</strong> (no install, but audio goes to their servers)</li>
+        <li><strong>Always edit</strong> — AI isn't perfect</li>
+        <li><strong>Start with `base` model</strong> — best balance of speed and accuracy</li>
+        <li><strong>Sensitive content = local only</strong></li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <p style="text-align:center; margin-top:2rem; color:var(--muted); font-size:0.9rem;">
+        From Asdale Dynamics, LLC — <a href="https://dylanasdale.github.io" target="_blank" rel="noopener">dylanasdale.github.io</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-credit">Asdale Dynamics, LLC &middot; Indiana, formed October 2026</div>
+      <hr class="footer-divider">
+      <p>MIT License &middot; Copyright (c) 2026 Asdale Dynamics, LLC</p>
+    </div>
+  </footer>
+</body>
+</html>

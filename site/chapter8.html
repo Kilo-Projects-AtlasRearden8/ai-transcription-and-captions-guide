@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>8. Adding Captions to a Video — Free AI Transcription Guide</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="#content" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="site-brand">
+        <div class="logo">AD</div>
+        <div>
+          <h1>Free AI Transcription &amp; Captions</h1>
+          <div class="llc">Asdale Dynamics, LLC</div>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#chapters">All Chapters</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="chapter-page" id="content">
+    <div class="chapter-header">
+      <span class="chapter-number">Chapter 8</span>
+      <h1>Adding Captions to a Video</h1>
+      <div class="series">Free AI Transcription and Captions Guide &middot; Asdale Dynamics, LLC</div>
+    </div>
+
+    <section class="section">
+      <h2>Why Captions Matter</h2>
+      <ul>
+        <li><strong>Accessibility:</strong> Deaf and hard-of-hearing viewers</li>
+        <li><strong>Comprehension:</strong> Non-native speakers, noisy environments</li>
+        <li><strong>SEO:</strong> Search engines can index caption text</li>
+        <li><strong>Engagement:</strong> Many people watch videos on mute</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Caption Formats Explained</h2>
+      <table>
+        <thead><tr><th>Format</th><th>Extension</th><th>Best For</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>SRT</td><td>.srt</td><td>Most video players, YouTube</td><td>Most widely supported</td></tr>
+          <tr><td>VTT</td><td>.vtt</td><td>Web video (HTML5)</td><td>Web standard, supports styling</td></tr>
+          <tr><td>TXT</td><td>.txt</td><td>Reading, editing</td><td>No timestamps — not for captions</td></tr>
+        </tbody>
+      </table>
+      <p><strong>Recommendation:</strong> Create SRT. It works everywhere.</p>
+    </section>
+
+    <section class="section">
+      <h2>SRT Format Explained</h2>
+      <pre><code>1
+00:00:01,000 --> 00:00:04,000
+Welcome to the presentation.
+
+2
+00:00:04,000 --> 00:00:07,000
+Today we'll cover three main topics.</code></pre>
+    </section>
+
+    <section class="section">
+      <h2>Step-by-Step: Add Captions to Your Video</h2>
+      <h3>Option 1: YouTube (Easiest)</h3>
+      <ol>
+        <li>Upload your video to YouTube Studio</li>
+        <li>In <strong>Subtitles</strong>, click <strong>Add Language</strong> → select your language</li>
+        <li>Choose <strong>Upload file</strong> → upload your .srt or .vtt</li>
+        <li>Review and publish</li>
+      </ol>
+      <h3>Option 2: VLC Media Player (Local Playback)</h3>
+      <ol>
+        <li>Place your video and .srt file in the same folder</li>
+        <li>Name them identically: <code>lecture.mp4</code> + <code>lecture.srt</code></li>
+        <li>Open the video in VLC — captions appear automatically</li>
+      </ol>
+      <h3>Option 3: HTML5 Video (Websites)</h3>
+      <pre><code>&lt;video width="640" height="360" controls&gt;
+  &lt;source src="lecture.mp4" type="video/mp4"&gt;
+  &lt;track src="lecture.vtt" kind="captions" srclang="en" label="English"&gt;
+&lt;/video&gt;</code></pre>
+      <h3>Option 4: Burn Captions Into the Video (Permanent)</h3>
+      <pre><code>ffmpeg -i lecture.mp4 -vf "subtitles=lecture.srt" lecture-with-captions.mp4</code></pre>
+    </section>
+
+    <section class="section">
+      <h2>Editing Captions</h2>
+      <ul>
+        <li>1–2 lines per caption</li>
+        <li>Maximum 32–42 characters per line</li>
+        <li>Display time: 1.5–7 seconds per caption</li>
+        <li>Break at natural pauses (commas, periods, sentence ends)</li>
+      </ul>
+      <p><strong>Tools:</strong> Subtitle Edit (free, Windows), Aegisub (free, cross-platform), or any text editor.</p>
+    </section>
+
+    <section class="section">
+      <h2>Try It: Add Captions to a Short Video</h2>
+      <ol>
+        <li>Take a short video (30–60 seconds) you own</li>
+        <li>Transcribe it locally: <code>python -m faster_whisper transcribe video.mp4 --model tiny --output_format srt</code></li>
+        <li>Rename the .srt file to match your video exactly</li>
+        <li>Open both in VLC — captions appear</li>
+        <li>Upload to YouTube Studio and add the SRT as subtitles (optional)</li>
+      </ol>
+    </section>
+
+    <section class="section">
+      <h2>Key Takeaways</h2>
+      <ul>
+        <li><strong>SRT</strong> is the universal caption format</li>
+        <li><strong>Whisper generates SRT automatically</strong> — no manual timing needed</li>
+        <li><strong>VLC plays SRT automatically</strong> if filename matches the video</li>
+        <li><strong>HTML5 `<track>`</strong> adds captions to web videos</li>
+        <li><strong>ffmpeg burns captions in</strong> for permanent, always-visible captions</li>
+      </ul>
+    </section>
+
+    <div class="chapter-nav">
+      <div class="nav-prev"><a href="chapter7.html">← Chapter 7</a></div>
+      <div class="nav-next"><a href="chapter9.html">Chapter 9 → Editing and Cleaning Transcripts</a></div>
+    </div>
+    <a href="index.html" class="back-to-index">← Back to all chapters</a>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-credit">Asdale Dynamics, LLC &middot; Indiana, formed October 2026</div>
+      <hr class="footer-divider">
+      <p>MIT License &middot; Copyright (c) 2026 Asdale Dynamics, LLC</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7. Transcribing a Lecture (Local) — Free AI Transcription Guide</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="#content" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="site-brand">
+        <div class="logo">AD</div>
+        <div>
+          <h1>Free AI Transcription &amp; Captions</h1>
+          <div class="llc">Asdale Dynamics, LLC</div>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#chapters">All Chapters</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="chapter-page" id="content">
+    <div class="chapter-header">
+      <span class="chapter-number">Chapter 7</span>
+      <h1>Transcribing a Lecture (Local)</h1>
+      <div class="series">Free AI Transcription and Captions Guide &middot; Asdale Dynamics, LLC</div>
+    </div>
+
+    <section class="section">
+      <h2>Scenario</h2>
+      <p>You recorded a 50-minute university lecture on your phone. You want a searchable, editable transcript for studying.</p>
+      <p><strong>Tool:</strong> faster-whisper (local, free, private)</p>
+      <p><strong>Why local:</strong> Lecture content is your personal study material — keep it on your computer.</p>
+    </section>
+
+    <section class="section">
+      <h2>Step-by-Step</h2>
+      <h3>Step 1: Get the recording onto your computer</h3>
+      <p>From iPhone: connect via USB, use Files app to copy the recording, or email/AirDrop. From Android: connect via USB, copy from Recordings folder. Save as <code>lecture.mp3</code> or <code>lecture.m4a</code>.</p>
+      <h3>Step 2: Install faster-whisper</h3>
+      <pre><code>pip install faster-whisper</code></pre>
+      <h3>Step 3: Convert audio (if needed)</h3>
+      <pre><code>ffmpeg -i lecture.m4a -ar 16000 -ac 1 lecture.wav</code></pre>
+      <h3>Step 4: Transcribe</h3>
+      <pre><code>python -m faster_whisper transcribe lecture.mp3 \
+  --model base \
+  --output_format srt,txt \
+  --output_dir ./transcripts</code></pre>
+      <p>Expected time: ~5–10 minutes per hour of audio on CPU.</p>
+      <h3>Step 5: Open your transcript</h3>
+      <p><code>transcripts/lecture.txt</code> — plain text · <code>transcripts/lecture.srt</code> — captions with timestamps</p>
+    </section>
+
+    <section class="section">
+      <h2>Example Output</h2>
+      <h3>lecture.txt:</h3>
+      <pre><code>[00:00] Good morning everyone. Today we're going to talk about
+[00:05] the fundamentals of cellular respiration.
+[00:10] Cellular respiration is the process by which cells
+[00:15] convert glucose into energy in the form of ATP.</code></pre>
+    </section>
+
+    <section class="section callout">
+      <h2>Privacy Advantage</h2>
+      <p>Because this runs locally:</p>
+      <ul>
+        <li>✅ Lecture never leaves your computer</li>
+        <li>✅ No account, no API key, no terms of service</li>
+        <li>✅ No monthly minute limits</li>
+        <li>✅ Works offline (after model download)</li>
+        <li>✅ You own the transcript completely</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Speed Tips</h2>
+      <table>
+        <thead><tr><th>Tip</th><th>Effect</th></tr></thead>
+        <tbody>
+          <tr><td>Use `tiny` model</td><td>2–3x faster, slightly less accurate</td></tr>
+          <tr><td>Close other apps</td><td>Frees RAM for transcription</td></tr>
+          <tr><td>Use GPU (NVIDIA)</td><td>5–10x faster than CPU</td></tr>
+          <tr><td>Convert to 16 kHz mono WAV</td><td>Slightly faster processing</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>Try It: Transcribe a Short Lecture Clip</h2>
+      <ol>
+        <li>Record 5 minutes of a lecture, presentation, or video audio</li>
+        <li>Save as <code>practice.mp3</code> on your computer</li>
+        <li>Run: <code>pip install faster-whisper</code></li>
+        <li>Run: <code>python -m faster_whisper transcribe practice.mp3 --model tiny --output_format txt</code></li>
+        <li>Open <code>practice.txt</code> and read your transcript</li>
+        <li>Try the `base` model for comparison</li>
+      </ol>
+    </section>
+
+    <section class="section">
+      <h2>Key Takeaways</h2>
+      <ul>
+        <li><strong>Local transcription</strong> keeps lecture content private and on your computer</li>
+        <li><strong>faster-whisper</strong> is the recommended tool</li>
+        <li><strong>Start with `base` model</strong> — good balance of speed and accuracy</li>
+        <li><strong>SRT format</strong> includes timestamps — useful for syncing with video</li>
+        <li><strong>No monthly limits</strong> — transcribe as many lectures as you want</li>
+      </ul>
+    </section>
+
+    <div class="chapter-nav">
+      <div class="nav-prev"><a href="chapter6.html">← Chapter 6</a></div>
+      <div class="nav-next"><a href="chapter8.html">Chapter 8 → Adding Captions to a Video</a></div>
+    </div>
+    <a href="index.html" class="back-to-index">← Back to all chapters</a>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-credit">Asdale Dynamics, LLC &middot; Indiana, formed October 2026</div>
+      <hr class="footer-divider">
+      <p>MIT License &middot; Copyright (c) 2026 Asdale Dynamics, LLC</p>
+    </div>
+  </footer>
+</body>
+</html>

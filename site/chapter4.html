@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>4. Local Options (Run on Your Computer) — Free AI Transcription Guide</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="#content" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="site-brand">
+        <div class="logo">AD</div>
+        <div>
+          <h1>Free AI Transcription &amp; Captions</h1>
+          <div class="llc">Asdale Dynamics, LLC</div>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#chapters">All Chapters</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="chapter-page" id="content">
+    <div class="chapter-header">
+      <span class="chapter-number">Chapter 4</span>
+      <h1>Local Options (Run on Your Computer)</h1>
+      <div class="series">Free AI Transcription and Captions Guide &middot; Asdale Dynamics, LLC</div>
+    </div>
+
+    <section class="section">
+      <h2>What "Local" Means</h2>
+      <p>The AI runs entirely on your computer. Your audio never leaves your device. No internet needed after setup.</p>
+      <p><strong>Pros:</strong> Total privacy — audio never leaves your computer · No accounts, no API keys, no monthly limits · Works offline · Free forever (open-source models)</p>
+      <p><strong>Cons:</strong> Needs a decent computer · Setup takes 10–30 minutes · Accuracy may be slightly lower than top cloud models · Large model downloads (1–5 GB)</p>
+    </section>
+
+    <section class="section">
+      <h2>System Requirements</h2>
+      <table>
+        <thead><tr><th>Component</th><th>Minimum</th><th>Recommended</th></tr></thead>
+        <tbody>
+          <tr><td>RAM</td><td>8 GB</td><td>16 GB</td></tr>
+          <tr><td>Storage</td><td>10 GB free</td><td>20 GB free</td></tr>
+          <tr><td>CPU</td><td>Any modern (Intel/AMD/Apple Silicon)</td><td>Multi-core</td></tr>
+          <tr><td>GPU</td><td>Optional</td><td>NVIDIA with 4–8 GB VRAM (much faster)</td></tr>
+          <tr><td>OS</td><td>Windows 10+, macOS 10.15+, Linux</td><td>Any</td></tr>
+        </tbody>
+      </table>
+      <p><strong>No GPU? No problem.</strong> Whisper runs on CPU — it's just 2–5x slower.</p>
+    </section>
+
+    <section class="section">
+      <h2>The Two Best Local Tools</h2>
+      <h3>Option A: Whisper (via faster-whisper) — Recommended</h3>
+      <p>OpenAI's Whisper is the gold standard for free local transcription. <code>faster-whisper</code> is an optimized version that runs 4–8x faster.</p>
+      <p><strong>Install (Windows, Mac, Linux):</strong></p>
+      <pre><code>pip install faster-whisper</code></pre>
+      <p><strong>Transcribe a file:</strong></p>
+      <pre><code>python -m faster_whisper transcribe meeting.mp3 --model base --output_dir ./output</code></pre>
+      <p>Model sizes: tiny, base, small, medium, large-v3. Larger = more accurate, slower, bigger download.</p>
+    </section>
+
+    <section class="section">
+      <h3>Option B: Whisper.cpp — Fastest on CPU</h3>
+      <p>A C++ implementation of Whisper. Very fast, no Python needed. Best for older computers.</p>
+      <p><strong>Mac (Homebrew):</strong> <code>brew install whisper.cpp</code></p>
+      <p><strong>Windows / Linux:</strong> Download from <a href="https://github.com/ggerganov/whisper.cpp" target="_blank" rel="noopener">github.com/ggerganov/whisper.cpp</a></p>
+    </section>
+
+    <section class="section">
+      <h3>Option C: Vosk — Lightweight, Offline</h3>
+      <p>Small models (50 MB), runs on anything including Raspberry Pi. Lower accuracy than Whisper, English-focused models are best.</p>
+      <p>Download from <a href="https://alphacephei.com/vosk/models" target="_blank" rel="noopener">alphacephei.com/vosk/models</a></p>
+    </section>
+
+    <section class="section">
+      <h2>Model Sizes Explained</h2>
+      <table>
+        <thead><tr><th>Model</th><th>Size</th><th>Speed</th><th>Accuracy</th><th>Best For</th></tr></thead>
+        <tbody>
+          <tr><td>tiny</td><td>~1 GB</td><td>Fastest</td><td>Good</td><td>Quick drafts, old computers</td></tr>
+          <tr><td>base</td><td>~1 GB</td><td>Fast</td><td>Good</td><td>General use (recommended start)</td></tr>
+          <tr><td>small</td><td>~2 GB</td><td>Medium</td><td>Better</td><td>Meetings, lectures</td></tr>
+          <tr><td>medium</td><td>~5 GB</td><td>Slower</td><td>Better still</td><td>Important content</td></tr>
+          <tr><td>large-v3</td><td>~3 GB</td><td>Slowest</td><td>Best</td><td>Maximum accuracy</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>Step-by-Step: Transcribe a Lecture Locally</h2>
+      <ol>
+        <li><strong>Transfer the file</strong> to your computer (USB, email, AirDrop)</li>
+        <li><strong>Install faster-whisper:</strong> <code>pip install faster-whisper</code></li>
+        <li><strong>Transcribe:</strong> <code>python -m faster_whisper transcribe lecture.mp3 --model base --output_format srt --output_dir ./transcripts</code></li>
+        <li><strong>Wait</strong> (~5–10 minutes per hour of audio on CPU)</li>
+        <li><strong>Open the result:</strong> <code>transcripts/lecture.srt</code> or <code>transcripts/lecture.txt</code></li>
+      </ol>
+    </section>
+
+    <section class="section">
+      <h2>Converting Audio Formats</h2>
+      <p>Whisper accepts MP3, WAV, M4A, OGG, FLAC, and most video formats. If needed, convert with ffmpeg:</p>
+      <pre><code>ffmpeg -i input.m4a -ar 16000 -ac 1 output.wav</code></pre>
+    </section>
+
+    <section class="section callout">
+      <h2>Privacy Checklist for Local Tools</h2>
+      <ul>
+        <li>✅ No account required</li>
+        <li>✅ No API key needed</li>
+        <li>✅ No internet needed after model download</li>
+        <li>✅ Audio never leaves your computer</li>
+        <li>✅ Model files stay on your disk</li>
+      </ul>
+      <p><strong>Local = safest option for sensitive audio.</strong></p>
+    </section>
+
+    <section class="section">
+      <h2>Try It: Transcribe a 1-Minute Clip</h2>
+      <ol>
+        <li>Record 1 minute of yourself speaking on your phone</li>
+        <li>Transfer to computer as <code>test.mp3</code></li>
+        <li>Run: <code>pip install faster-whisper</code></li>
+        <li>Run: <code>python -m faster_whisper transcribe test.mp3 --model tiny --output_format txt</code></li>
+        <li>Open <code>test.txt</code> — your first local transcript</li>
+      </ol>
+    </section>
+
+    <section class="section">
+      <h2>Key Takeaways</h2>
+      <ul>
+        <li><strong>Local = private</strong> — audio never leaves your computer</li>
+        <li><strong>faster-whisper</strong> is the best starting point</li>
+        <li><strong>Start with `base` model</strong> — good balance of speed and accuracy</li>
+        <li><strong>No GPU needed</strong> — CPU works, just slower</li>
+        <li><strong>ffmpeg</strong> converts any audio/video to Whisper-friendly format</li>
+      </ul>
+    </section>
+
+    <div class="chapter-nav">
+      <div class="nav-prev"><a href="chapter3.html">← Chapter 3</a></div>
+      <div class="nav-next"><a href="chapter5.html">Chapter 5 → Comparison</a></div>
+    </div>
+    <a href="index.html" class="back-to-index">← Back to all chapters</a>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-credit">Asdale Dynamics, LLC &middot; Indiana, formed October 2026</div>
+      <hr class="footer-divider">
+      <p>MIT License &middot; Copyright (c) 2026 Asdale Dynamics, LLC</p>
+    </div>
+  </footer>
+</body>
+</html>

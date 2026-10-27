@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>12. Export Formats Explained — Free AI Transcription Guide</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="#content" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="site-brand">
+        <div class="logo">AD</div>
+        <div>
+          <h1>Free AI Transcription &amp; Captions</h1>
+          <div class="llc">Asdale Dynamics, LLC</div>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#chapters">All Chapters</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="chapter-page" id="content">
+    <div class="chapter-header">
+      <span class="chapter-number">Chapter 12</span>
+      <h1>Export Formats Explained</h1>
+      <div class="series">Free AI Transcription and Captions Guide &middot; Asdale Dynamics, LLC</div>
+    </div>
+
+    <section class="section">
+      <h2>Choosing the Right Format</h2>
+      <p>Different formats serve different purposes. This chapter helps you pick.</p>
+    </section>
+
+    <section class="section">
+      <h2>Format Comparison Table</h2>
+      <table>
+        <thead><tr><th>Format</th><th>Extension</th><th>Timestamps</th><th>Speaker Labels</th><th>Best For</th></tr></thead>
+        <tbody>
+          <tr><td>TXT</td><td>.txt</td><td>No</td><td>Optional</td><td>Reading, printing, notes</td></tr>
+          <tr><td>MD</td><td>.md</td><td>Optional</td><td>Optional</td><td>Documents, websites, GitHub</td></tr>
+          <tr><td>SRT</td><td>.srt</td><td>Yes</td><td>No</td><td>Video captions, YouTube, VLC</td></tr>
+          <tr><td>VTT</td><td>.vtt</td><td>Yes</td><td>No</td><td>Web video (HTML5)</td></tr>
+          <tr><td>DOCX</td><td>.docx</td><td>No</td><td>Optional</td><td>Word documents, sharing</td></tr>
+          <tr><td>PDF</td><td>.pdf</td><td>No</td><td>Optional</td><td>Fixed-layout sharing</td></tr>
+          <tr><td>JSON</td><td>.json</td><td>Yes</td><td>Yes</td><td>Developers, data processing</td></tr>
+          <tr><td>CSV</td><td>.csv</td><td>Yes</td><td>Yes</td><td>Spreadsheets, analysis</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>Format Details</h2>
+      <h3>TXT — Plain Text</h3>
+      <pre><code>Good morning everyone. Today we'll cover three topics.
+
+First, we'll review the budget.</code></pre>
+      <p><strong>Pros:</strong> Opens everywhere, smallest file, easy to edit · <strong>Cons:</strong> No timestamps, no formatting · <strong>Best for:</strong> Reading, study notes, quick reference</p>
+      <h3>MD — Markdown</h3>
+      <pre><code># Meeting Transcript
+
+## Speakers
+- Sarah (Manager)
+- Mike (Developer)
+
+## Transcript
+
+[00:00] **Sarah:** Good morning, everyone.</code></pre>
+      <p><strong>Pros:</strong> Readable plain text, formatting (headers, bold, lists), works on GitHub · <strong>Best for:</strong> Documentation, blogs, version-controlled documents</p>
+      <h3>SRT — SubRip Subtitle</h3>
+      <pre><code>1
+00:00:01,000 --> 00:00:04,000
+Good morning everyone.</code></pre>
+      <p><strong>Pros:</strong> Universal caption format, works in YouTube/VLC/players · <strong>Best for:</strong> Video captions, subtitles</p>
+      <h3>JSON — Structured Data</h3>
+      <pre><code>{
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 4.0,
+      "text": "Good morning everyone.",
+      "speaker": "Speaker 1",
+      "confidence": 0.95
+    }
+  ]
+}</code></pre>
+      <p><strong>Pros:</strong> Complete data (timestamps, speakers, confidence), machine-readable · <strong>Best for:</strong> Developers, custom tools, data analysis</p>
+    </section>
+
+    <section class="section">
+      <h2>Quick Decision Guide</h2>
+      <table>
+        <thead><tr><th>Your Goal</th><th>Recommended Format</th></tr></thead>
+        <tbody>
+          <tr><td>Read on your phone</td><td>TXT or MD</td></tr>
+          <tr><td>Add captions to video</td><td>SRT</td></tr>
+          <tr><td>Put on a website</td><td>VTT</td></tr>
+          <tr><td>Share with a team</td><td>DOCX or PDF</td></tr>
+          <tr><td>Analyze with code</td><td>JSON</td></tr>
+          <tr><td>Import to spreadsheet</td><td>CSV</td></tr>
+          <tr><td>Publish on GitHub</td><td>MD</td></tr>
+          <tr><td>Study notes</td><td>TXT or MD</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>Converting Between Formats</h2>
+      <h3>Multiple formats from Whisper</h3>
+      <pre><code>python -m faster_whisper transcribe audio.mp3 \
+  --model base \
+  --output_format srt,txt,json \
+  --output_dir ./output</code></pre>
+      <p>This creates <code>audio.srt</code>, <code>audio.txt</code>, and <code>audio.json</code> in one run.</p>
+    </section>
+
+    <section class="section">
+      <h2>Try It: Export in Three Formats</h2>
+      <ol>
+        <li>Take any transcript you've created</li>
+        <li>Save it as: <code>transcript.txt</code> (plain text)</li>
+        <li>Save it as: <code>transcript.md</code> (add a title header <code>#</code>)</li>
+        <li>Save it as: <code>transcript.srt</code> (if you have timestamps)</li>
+        <li>Open each file and notice the differences</li>
+        <li>Decide which format you'll use for your project</li>
+      </ol>
+    </section>
+
+    <section class="section">
+      <h2>Key Takeaways</h2>
+      <ul>
+        <li><strong>TXT</strong> = simplest, works everywhere</li>
+        <li><strong>SRT</strong> = video captions, universal player support</li>
+        <li><strong>MD</strong> = formatted, GitHub-friendly, good for documentation</li>
+        <li><strong>JSON</strong> = for developers and data tools</li>
+        <li><strong>Whisper outputs multiple formats at once</strong> — use <code>--output_format srt,txt,json</code></li>
+      </ul>
+    </section>
+
+    <div class="chapter-nav">
+      <div class="nav-prev"><a href="chapter11.html">← Chapter 11</a></div>
+      <div class="nav-next"><a href="chapter13.html">Chapter 13 → Quick Reference Card</a></div>
+    </div>
+    <a href="index.html" class="back-to-index">← Back to all chapters</a>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-credit">Asdale Dynamics, LLC &middot; Indiana, formed October 2026</div>
+      <hr class="footer-divider">
+      <p>MIT License &middot; Copyright (c) 2026 Asdale Dynamics, LLC</p>
+    </div>
+  </footer>
+</body>
+</html>

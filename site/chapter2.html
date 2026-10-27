@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2. Key Terms You'll See — Free AI Transcription Guide</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="#content" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="site-brand">
+        <div class="logo">AD</div>
+        <div>
+          <h1>Free AI Transcription &amp; Captions</h1>
+          <div class="llc">Asdale Dynamics, LLC</div>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#chapters">All Chapters</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="chapter-page" id="content">
+    <div class="chapter-header">
+      <span class="chapter-number">Chapter 2</span>
+      <h1>Key Terms You'll See</h1>
+      <div class="series">Free AI Transcription and Captions Guide &middot; Asdale Dynamics, LLC</div>
+    </div>
+
+    <section class="section">
+      <h2>Why This Chapter Exists</h2>
+      <p>Tool documentation throws around jargon. This chapter translates it. Bookmark it and come back when you hit an unfamiliar word.</p>
+    </section>
+
+    <section class="section">
+      <h2>A–Z Glossary</h2>
+      <p><strong>ASR (Automatic Speech Recognition)</strong> — The technical term for "speech-to-text." You'll see this in docs and research papers.</p>
+      <p><strong>Confidence Score</strong> — A number (0–1 or 0–100) saying how sure the model is about each word/segment. Low score = likely error.</p>
+      <p><strong>Diarization / Speaker Diarization</strong> — "Who spoke when." Splits audio by speaker: "Speaker 1: Hello. Speaker 2: Hi there."</p>
+      <p><strong>Hallucination</strong> — The model invents words that weren't spoken — common in silence, music, or heavy noise.</p>
+      <p><strong>Language Model (LM)</strong> — Predicts likely word sequences. Turns "wreck a nice beach" into "recognize speech."</p>
+      <p><strong>Latency</strong> — Time between speech and text appearing. Real-time = under 300ms. Batch = minutes/hours.</p>
+      <p><strong>WER (Word Error Rate)</strong> — Standard accuracy metric: (Substitutions + Insertions + Deletions) / Total Words. Lower = better. Human-level ≈ 5%.</p>
+      <p><strong>VAD (Voice Activity Detection)</strong> — Detecting when speech starts and stops. Silences are cut out before transcription.</p>
+      <p><strong>Quantization</strong> — Compressing model weights (int8, int4) — faster, smaller, slightly less accurate.</p>
+      <p><strong>GPU / CPU</strong> — Graphics card vs. main processor — GPU is much faster for AI.</p>
+      <p><strong>Sample Rate</strong> — How many audio snapshots per second. 16 kHz = standard for speech.</p>
+    </section>
+
+    <section class="section">
+      <h2>Categories at a Glance</h2>
+      <table>
+        <thead><tr><th>Audio &amp; Recording</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td>Sample rate</td><td>Snapshots per second (16 kHz standard)</td></tr>
+          <tr><td>Bit depth</td><td>Precision per sample (16-bit standard)</td></tr>
+          <tr><td>Mono vs stereo</td><td>One channel vs two — ASR wants mono</td></tr>
+          <tr><td>Gain / clipping</td><td>Volume too low / too high (distorted)</td></tr>
+        </tbody>
+      </table>
+      <table>
+        <thead><tr><th>Model &amp; Inference</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td>Inference</td><td>Running the model (vs. training)</td></tr>
+          <tr><td>Quantization</td><td>Compressing model weights — faster, smaller</td></tr>
+          <tr><td>GPU / CPU</td><td>Graphics card vs. main processor</td></tr>
+          <tr><td>VRAM</td><td>GPU memory — limits model size</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section callout">
+      <h2>Cheat Sheet: What to Look For in Tool Docs</h2>
+      <table>
+        <thead><tr><th>If you see...</th><th>It means...</th></tr></thead>
+        <tbody>
+          <tr><td>"Supports 16 kHz mono WAV"</td><td>Convert your audio first</td></tr>
+          <tr><td>"Beam size 5"</td><td>Accuracy setting — higher = slower</td></tr>
+          <tr><td>"int8 quantization"</td><td>Model is compressed — faster, smaller download</td></tr>
+          <tr><td>"Streaming API"</td><td>Real-time, for live captions</td></tr>
+          <tr><td>"Diarization included"</td><td>Speaker labels come free</td></tr>
+          <tr><td>"WER 12% on LibriSpeech"</td><td>Benchmark accuracy — compare apples to apples</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>Try It: Decode a Real Doc Page</h2>
+      <p>Go to <a href="https://github.com/openai/whisper" target="_blank" rel="noopener">github.com/openai/whisper</a> and scan the README. You'll now recognize:</p>
+      <ul>
+        <li>"multilingual" → language model handles many languages</li>
+        <li>"robust to accents" → acoustic model trained on diverse speech</li>
+        <li>"tiny/base/small/medium/large" → model sizes (parameters)</li>
+        <li>"CPU inference" → runs without GPU</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Key Takeaways</h2>
+      <ul>
+        <li><strong>ASR = Automatic Speech Recognition</strong> — the formal name</li>
+        <li><strong>Diarization = speaker labels</strong> — essential for meetings</li>
+        <li><strong>WER = accuracy metric</strong> — lower is better, human ≈ 5%</li>
+        <li><strong>Quantization = smaller/faster model</strong> — trade-off: slight accuracy loss</li>
+        <li><strong>Confidence scores = your quality radar</strong> — always check low-confidence segments</li>
+      </ul>
+    </section>
+
+    <div class="chapter-nav">
+      <div class="nav-prev"><a href="chapter1.html">← Chapter 1</a></div>
+      <div class="nav-next"><a href="chapter3.html">Chapter 3 → Cloud Options</a></div>
+    </div>
+    <a href="index.html" class="back-to-index">← Back to all chapters</a>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-credit">Asdale Dynamics, LLC &middot; Indiana, formed October 2026</div>
+      <hr class="footer-divider">
+      <p>MIT License &middot; Copyright (c) 2026 Asdale Dynamics, LLC</p>
+    </div>
+  </footer>
+</body>
+</html>

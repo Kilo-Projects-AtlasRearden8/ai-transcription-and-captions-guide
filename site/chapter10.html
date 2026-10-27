@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10. Speaker Labels and Timestamps — Free AI Transcription Guide</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="#content" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="site-brand">
+        <div class="logo">AD</div>
+        <div>
+          <h1>Free AI Transcription &amp; Captions</h1>
+          <div class="llc">Asdale Dynamics, LLC</div>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#chapters">All Chapters</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="chapter-page" id="content">
+    <div class="chapter-header">
+      <span class="chapter-number">Chapter 10</span>
+      <h1>Speaker Labels and Timestamps</h1>
+      <div class="series">Free AI Transcription and Captions Guide &middot; Asdale Dynamics, LLC</div>
+    </div>
+
+    <section class="section">
+      <h2>Speaker Labels: "Who Said What?"</h2>
+      <p>In meetings and interviews, knowing who spoke is as important as what was said.</p>
+      <p><strong>Diarization</strong> is the technical term. The AI detects voice changes, clusters similar voices, and labels each cluster "Speaker 1," "Speaker 2," etc.</p>
+      <p><strong>Limitations:</strong> The AI doesn't know names — just "Speaker 1," "Speaker 2". Similar voices may be merged. Overlapping speech is hard to separate. Local Whisper doesn't do diarization.</p>
+    </section>
+
+    <section class="section">
+      <h2>Getting Speaker Labels</h2>
+      <table>
+        <thead><tr><th>Tool</th><th>Speaker Labels</th><th>Free Tier</th></tr></thead>
+        <tbody>
+          <tr><td>Otter.ai</td><td>Yes (auto)</td><td>600 min/month</td></tr>
+          <tr><td>AssemblyAI</td><td>Yes (diarization)</td><td>~5 hours/month</td></tr>
+          <tr><td>YouTube</td><td>No</td><td>Unlimited</td></tr>
+          <tr><td>Google Docs</td><td>No</td><td>Unlimited</td></tr>
+          <tr><td>faster-whisper (local)</td><td>No — manual</td><td>Free forever</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>Step-by-Step: Add Speaker Labels Manually</h2>
+      <ol>
+        <li>Play your audio and follow the transcript</li>
+        <li>Each time the voice changes, add a new line with a label</li>
+        <li>Replace generic labels with real names using find-and-replace</li>
+      </ol>
+      <pre><code>Speaker 1: Good morning, everyone.
+Speaker 2: Good morning. I'm ready to begin.
+Speaker 1: Let's start with the agenda.
+Speaker 3: I have a question about the budget.</code></pre>
+    </section>
+
+    <section class="section">
+      <h2>Timestamps: "When Was It Said?"</h2>
+      <p>Timestamps let you jump to a specific moment in the audio.</p>
+      <h3>SRT Timestamps (Automatic from Whisper)</h3>
+      <pre><code>1
+00:00:01,000 --> 00:00:04,000
+Welcome to the presentation.</code></pre>
+      <h3>Plain Text Timestamps (Manual)</h3>
+      <pre><code>[00:00] Welcome to the presentation.
+[00:30] Today we'll cover three topics.
+[01:15] First topic: project timeline.</code></pre>
+    </section>
+
+    <section class="section">
+      <h2>Combined Example</h2>
+      <pre><code>[00:00] Sarah: Good morning, everyone. Thanks for joining.
+[00:15] Mike: Good morning. Ready to go over the launch plan?
+[00:30] Sarah: Yes. Let's start with the timeline.
+[00:45] Jenny: I have a concern about the design deadline.
+[01:00] Sarah: Let's discuss that after the timeline.</code></pre>
+    </section>
+
+    <section class="section">
+      <h2>Timestamps for Captions vs. Transcripts</h2>
+      <table>
+        <thead><tr><th>Use Case</th><th>Format</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td>Captions (SRT/VTT)</td><td>00:00:01,000 --> 00:00:04,000</td><td>Precise frame-level timing</td></tr>
+          <tr><td>Transcript index</td><td>[00:00] or [0:00]</td><td>Approximate, human-readable</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>Try It: Label Speakers in a 3-Minute Clip</h2>
+      <ol>
+        <li>Take any meeting or conversation recording</li>
+        <li>Transcribe it (cloud with labels, or local without)</li>
+        <li>Play and follow along</li>
+        <li>Add speaker labels at each voice change</li>
+        <li>Replace "Speaker 1/2" with real names</li>
+        <li>Add timestamps every 30 seconds</li>
+        <li>Save as <code>labeled.md</code></li>
+      </ol>
+    </section>
+
+    <section class="section">
+      <h2>Key Takeaways</h2>
+      <ul>
+        <li><strong>Diarization = automatic speaker labels</strong> — available in cloud tools (Otter, AssemblyAI)</li>
+        <li><strong>Local Whisper doesn't label speakers</strong> — add manually while editing</li>
+        <li><strong>Replace generic labels</strong> with real names using find-and-replace</li>
+        <li><strong>Timestamps</strong> help you find specific moments in audio/video</li>
+        <li><strong>SRT format</strong> includes precise timestamps for captions</li>
+      </ul>
+    </section>
+
+    <div class="chapter-nav">
+      <div class="nav-prev"><a href="chapter9.html">← Chapter 9</a></div>
+      <div class="nav-next"><a href="chapter11.html">Chapter 11 → Privacy Rules and Best Practices</a></div>
+    </div>
+    <a href="index.html" class="back-to-index">← Back to all chapters</a>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-credit">Asdale Dynamics, LLC &middot; Indiana, formed October 2026</div>
+      <hr class="footer-divider">
+      <p>MIT License &middot; Copyright (c) 2026 Asdale Dynamics, LLC</p>
+    </div>
+  </footer>
+</body>
+</html>

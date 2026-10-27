@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11. Privacy Rules and Best Practices — Free AI Transcription Guide</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="#content" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="site-brand">
+        <div class="logo">AD</div>
+        <div>
+          <h1>Free AI Transcription &amp; Captions</h1>
+          <div class="llc">Asdale Dynamics, LLC</div>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#chapters">All Chapters</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="chapter-page" id="content">
+    <div class="chapter-header">
+      <span class="chapter-number">Chapter 11</span>
+      <h1>Privacy Rules and Best Practices</h1>
+      <div class="series">Free AI Transcription and Captions Guide &middot; Asdale Dynamics, LLC</div>
+    </div>
+
+    <section class="section">
+      <h2>Why Privacy Matters</h2>
+      <p>Transcription involves audio that often contains personal conversations, health information, business secrets, client details, and financial information. Once you upload audio to a cloud service, you lose direct control over it.</p>
+    </section>
+
+    <section class="section callout">
+      <h2>The Golden Rule</h2>
+      <p><strong>If you wouldn't email the audio file to a stranger, don't upload it to a cloud transcription service.</strong></p>
+    </section>
+
+    <section class="section">
+      <h2>Cloud vs Local: Privacy Comparison</h2>
+      <table>
+        <thead><tr><th>Aspect</th><th>Cloud Transcription</th><th>Local Transcription</th></tr></thead>
+        <tbody>
+          <tr><td>Audio leaves your device</td><td>Yes</td><td>No</td></tr>
+          <tr><td>Stored on third-party servers</td><td>Yes</td><td>No</td></tr>
+          <tr><td>Account required</td><td>Usually</td><td>No</td></tr>
+          <tr><td>Internet needed</td><td>Yes</td><td>No (after setup)</td></tr>
+          <tr><td>HIPAA compliant</td><td>Rarely (paid tiers only)</td><td>Yes (by design)</td></tr>
+          <tr><td>Best for</td><td>Non-sensitive content</td><td>Sensitive content</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>What Never to Upload to Cloud Transcription</h2>
+      <p><strong>Never upload:</strong></p>
+      <ul>
+        <li>Patient health information (PHI) — HIPAA risk</li>
+        <li>Therapy or counseling sessions</li>
+        <li>Confidential business meetings</li>
+        <li>Unreleased product details</li>
+        <li>Personal financial data</li>
+        <li>Social security numbers, IDs, passwords</li>
+        <li>Anything under NDA</li>
+        <li>Legal case details</li>
+      </ul>
+      <p><strong>Generally OK for cloud:</strong> public lectures you own, your own dictation/journal (non-sensitive), practice recordings, content already public.</p>
+    </section>
+
+    <section class="section callout">
+      <h2>HIPAA and Healthcare Audio</h2>
+      <p>If you're a healthcare worker:</p>
+      <ul>
+        <li>Cloud transcription is generally NOT HIPAA-compliant on free tiers</li>
+        <li>Paid enterprise tiers may offer BAA (Business Associate Agreement)</li>
+        <li><strong>Use local transcription</strong> for any patient-related audio</li>
+        <li>Never upload patient recordings to YouTube, Otter, AssemblyAI, etc.</li>
+      </ul>
+      <p><em>This guide is for education only — consult your compliance officer.</em></p>
+    </section>
+
+    <section class="section">
+      <h2>Local = Privacy by Default</h2>
+      <p>Local tools (faster-whisper, Vosk, whisper.cpp):</p>
+      <ul>
+        <li>✅ No account, no email, no registration</li>
+        <li>✅ No API key</li>
+        <li>✅ Audio never leaves your computer</li>
+        <li>✅ Works offline</li>
+        <li>✅ Model files stay on your disk</li>
+        <li>✅ You delete files when you want</li>
+      </ul>
+      <p>This is the recommended approach for sensitive content.</p>
+    </section>
+
+    <section class="section">
+      <h2>Data Retention: What to Ask Cloud Providers</h2>
+      <ul>
+        <li>How long is audio stored?</li>
+        <li>Is it deleted after transcription?</li>
+        <li>Can you delete it manually?</li>
+        <li>Is it used to train their AI models?</li>
+        <li>Who can access it?</li>
+        <li>Is it encrypted in transit and at rest?</li>
+      </ul>
+      <p><strong>Look for:</strong> "We delete audio after processing" and "Audio is not used for training."</p>
+    </section>
+
+    <section class="section">
+      <h2>Practical Privacy Checklist</h2>
+      <ul>
+        <li>Is this audio sensitive (health, business, personal)?</li>
+        <li>If yes → Use <strong>local</strong> transcription (Chapter 4)</li>
+        <li>If no → Cloud is acceptable</li>
+        <li>Did I remove or avoid recording sensitive details?</li>
+        <li>Do I know where the transcript will be stored?</li>
+        <li>Have I deleted source audio after transcribing (if sensitive)?</li>
+        <li>Is the transcript stored securely (encrypted device, access-controlled)?</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Secure Storage of Transcripts</h2>
+      <ul>
+        <li><strong>Computer:</strong> Use account password, full-disk encryption (FileVault, BitLocker)</li>
+        <li><strong>Cloud storage:</strong> Use encrypted folders, 2FA on your account</li>
+        <li><strong>Sharing:</strong> Share only with people who need it, remove access when done</li>
+        <li><strong>Backup:</strong> Encrypted backups, not public folders</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Deleting Source Audio</h2>
+      <p>After transcription:</p>
+      <ul>
+        <li><strong>Sensitive audio:</strong> Delete the recording after you verify the transcript</li>
+        <li><strong>Non-sensitive audio:</strong> Keep or delete based on your preference</li>
+        <li><strong>Cloud:</strong> Delete from the service's dashboard after downloading</li>
+      </ul>
+    </section>
+
+    <section class="section callout">
+      <h2>Try It: Privacy Self-Check</h2>
+      <p>Pick a recording you've made or plan to make:</p>
+      <ol>
+        <li>What's in it? (Names? Health info? Business details? Just ideas?)</li>
+        <li>Where will you transcribe it? (Cloud or local?)</li>
+        <li>Is that choice private enough?</li>
+        <li>Where will you store the transcript?</li>
+        <li>When will you delete the source audio?</li>
+      </ol>
+      <p>Write down your answers. This is your privacy plan.</p>
+    </section>
+
+    <section class="section">
+      <h2>Key Takeaways</h2>
+      <ul>
+        <li><strong>Local transcription = maximum privacy</strong> — audio never leaves your device</li>
+        <li><strong>Never upload sensitive audio</strong> to cloud services (health, business, personal)</li>
+        <li><strong>Healthcare workers:</strong> local only for patient audio — HIPAA considerations</li>
+        <li><strong>Delete source audio</strong> after transcribing sensitive content</li>
+        <li><strong>Store transcripts securely</strong> — encrypted devices, controlled sharing</li>
+      </ul>
+    </section>
+
+    <div class="chapter-nav">
+      <div class="nav-prev"><a href="chapter10.html">← Chapter 10</a></div>
+      <div class="nav-next"><a href="chapter12.html">Chapter 12 → Export Formats Explained</a></div>
+    </div>
+    <a href="index.html" class="back-to-index">← Back to all chapters</a>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-credit">Asdale Dynamics, LLC &middot; Indiana, formed October 2026</div>
+      <hr class="footer-divider">
+      <p>MIT License &middot; Copyright (c) 2026 Asdale Dynamics, LLC</p>
+    </div>
+  </footer>
+</body>
+</html>
